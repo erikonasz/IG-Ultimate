@@ -1,6 +1,7 @@
-Ultimate Instagram tool. 
+## Ultimate Instagram Tool!
 
+AutoFollower/AutoLiker/AutoCommenter.
 
-AutoFollow/AutoLike/AutoComment
+Contact DC - erikonasz#0058
 
-Currently being developed.
+- Random times between actions to avoid getting banned.
