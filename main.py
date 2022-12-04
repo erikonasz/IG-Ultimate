@@ -22,9 +22,9 @@ def login():
 
 
     username.click()
-    username.send_keys('username')
+    username.send_keys('')
     password.click()
-    password.send_keys('password')
+    password.send_keys('')
     time.sleep(3)
 
     login_B = driver.find_element(By.XPATH, '//div[text()="Log in"]')
@@ -55,6 +55,7 @@ def SelectAutof():
     print("Please select the function: ")
     print("1. AutoFollow people who followed particular page")
     print("2. AutoFollow everyone who liked the particular post")
+    print("3. UnFollow everyone from your page")
     selectf = input()
     if selectf == '1':
         igpagef = input("Please enter the IG page username: ")
@@ -66,6 +67,11 @@ def SelectAutof():
         driver.get(f"https://www.instagram.com/p/{postcode}/liked_by")
         time.sleep(8)
         FollowP()
+    if selectf == '3':
+        myig = input("Enter your IG username")
+        driver.get(f"https://www.instagram.com/{myig}/following/")
+        time.sleep(5)
+        UnFollow()
 
 def Follow():
     scroll = driver.find_element(By.XPATH, '/html/body/div[1]/div/div/div/div[2]/div/div/div[1]/div/div[2]/div/div/div/div/div[2]/div/div/div[2]')
@@ -100,6 +106,27 @@ def FollowP():
                     Randomsleep()
         except:
             print("Can't find follow button, all people already followed?")
+            time.sleep(3)
+            SelectAutof()
+
+def UnFollow():
+    scroll3 = driver.find_element(By.XPATH,'/html/body/div[1]/div/div/div/div[2]/div/div/div[1]/div/div[2]/div/div/div/div/div[2]/div/div/div[2]')
+    while True:
+        for _ in range(2):
+            time.sleep(5)
+            driver.execute_script("arguments[0].scrollTop = arguments[0].scrollHeight", scroll3)
+        ubuttons = driver.find_elements(By.CSS_SELECTOR, "._aano div div button")
+        try:
+            for button in ubuttons:
+                if button.text == 'Following':
+                    button.click()
+                    time.sleep(3)
+                    s = driver.find_element(By.XPATH, '//button[text()="Unfollow"]')
+                    s.click()
+                    print("UnFollowed!")
+                    Randomsleep()
+        except:
+            print("Can't find unfollow button, all people already followed?")
             time.sleep(3)
             SelectAutof()
 
