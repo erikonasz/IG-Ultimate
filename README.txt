@@ -1,4 +1,4 @@
-<h3 align="center"> Ultimate Instagram tool. </h3>
+Ultimate Instagram tool. 
 
 
 AutoFollow/AutoLike/AutoComment
