@@ -1,8 +1,10 @@
 ## Ultimate Instagram Tool!
 
-AutoFollower/AutoLiker/AutoCommenter.
+AutoFollower/Unfollower.
 
-Contact DC - erikonasz#0058
+If any issues arise, please contact via dc.
 
-- Random times between actions to avoid getting banned.
-- Still being developed. If any issues arise, please contact via dc.
+- Random times between actions (60 to 120 secs) to avoid getting banned.
+- AutoFollower
+- UnFollower
+
