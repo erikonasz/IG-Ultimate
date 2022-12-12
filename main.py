@@ -8,7 +8,8 @@ import time
 driver = webdriver.Chrome(executable_path=ChromeDriverManager().install())
 driver.set_window_size(1920,1080)
 
-
+uname = input("Enter your IG email: ")
+paswo = input("Enter IG password: ")
 
 
 def login():
@@ -20,11 +21,10 @@ def login():
     username = driver.find_element(By.NAME, 'username')
     password = driver.find_element(By.NAME, 'password')
 
-
     username.click()
-    username.send_keys('')
+    username.send_keys(uname)
     password.click()
-    password.send_keys('')
+    password.send_keys(paswo)
     time.sleep(3)
 
     login_B = driver.find_element(By.XPATH, '//div[text()="Log in"]')
@@ -48,7 +48,7 @@ def login():
         pass
 
 def Randomsleep():
-    _sleep = random.randint(10,20)
+    _sleep = random.randint(60,120)
     time.sleep(_sleep)
 
 def SelectAutof():
@@ -129,6 +129,7 @@ def UnFollow():
             print("Can't find unfollow button, all people already followed?")
             time.sleep(3)
             SelectAutof()
+
 
 login()
 SelectAutof()
